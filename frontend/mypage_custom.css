@@ -1,0 +1,172 @@
+body {
+  font-family: 'Jost', sans-serif;
+  overflow-x: hidden;
+  color: #505962;
+}
+
+
+/*Navigation*/
+
+.navbar {
+  letter-spacing: .1rem;
+    /*!important überschreibt background color der navigation*/
+  background: rgba(0, 0, 0, .6)!important;
+}
+
+.navbar-brand img {
+  height: 2.7rem;
+}
+
+
+/*logout*/
+
+#logout {
+  color: indianred;
+}
+
+
+/*bold headline*/
+
+.bold_head h1 {
+  font-family: 'Press Start 2P';
+  color: indianred;
+  margin-top: 120px;
+}
+
+
+/*card deck*/
+
+.readMore-color {
+  color: indianred;
+}
+
+.readMore-color:hover {
+  color: #505962;
+}
+
+.card-deck {
+  margin: 100px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.card-title {
+  color: indianred;
+}
+
+
+/*messagebox*/
+
+#postfach {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.userImg {
+  height: 3rem;
+}
+
+.userName {
+  margin-left: 2rem;
+  font-size: .9rem;
+  color: indianred;
+}
+
+.chatText {
+  margin-left: 2rem;
+}
+
+.chatDate {
+  font-size: .8rem;
+}
+
+
+/*footer*/
+
+footer {
+  background-color: #505962;
+  color: white;
+  padding: 2rem 0 3rem;
+}
+
+footer img {
+  height: 4rem;
+  margin: 1.5rem 0;
+}
+
+.socialmedia {
+  font-size: 1.3rem;
+}
+
+hr.socket {
+  border-top: .2rem solid #9da2a7;
+  width: 100%;
+}
+
+/***********************************************/
+
+/*Media Queries*/
+
+@media (max-width: 768px) {
+    /*bold headline*/
+  .bold_head h1 {
+    margin-top: 6.5rem;
+    font-size: 2rem;
+  }
+    /*toggler*/
+  #nav-sm {
+    padding-right: 5rem;
+  }
+    /*lab cards*/
+  .card-deck {
+    width: 90%;
+    margin: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .text-muted {
+    font-size: .7rem;
+  }
+
+  .card-img-top {
+    height: 10rem;
+  }
+    /*Messagebox*/
+  #postfach {
+    margin: 1rem;
+  }
+
+  .userImg {
+    height: 3.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+    /*Messagebox*/
+  .chatText {
+    font-size: .9rem;
+  }
+
+  .chatDate.userName {
+    font-size: .7rem;
+  }
+    /*Impressum und Kontakt*/
+  footer p {
+    font-size: .8rem;
+  }
+}
