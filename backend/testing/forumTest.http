@@ -1,0 +1,84 @@
+
+// CREATE POST
+POST http://localhost:3200/posts/new HTTP/1.1
+Content-Type: application/json
+authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjYzhlMzNmMTFkMjM1ZWI4NmQ5MDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTkyNTc2MjQxLCJleHAiOjE1OTI1NzY1NDF9.rz3fmUYi9RL4lFaTSLsBdLaLQp5QNKSCTx6IO2wXaGM
+
+{
+    "title": "Erster Post",
+    "text":"textetxttext!?",
+    "subject": "Fun"
+}
+
+###
+
+// GET ALL POSTS
+GET http://localhost:3200/posts
+
+
+###
+
+
+// GET ALL categories --> FAIL
+GET http://localhost:3200/posts/categories
+
+
+###
+
+// GET ALL COMMENT --> FAIL
+GET http://localhost:3200/posts/comments
+
+
+
+
+###
+
+// GET ONE COMMENT BY ID 
+GET http://localhost:3200/posts/comment/5eecc43976145733ec629623
+
+###
+
+//GET POSTS BY ID INKL COMMENTS
+GET http://localhost:3200/posts/5eecc43976145733ec629623
+//Auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWU2MjNhZmViOTU5YTMzNGYwZjJlM2UiLCJpYXQiOjE1OTIxNDE3MjIsImV4cCI6MTU5MjE0MjAyMn0.D18LcOgWomnTICT1qxJHSBnvSmV7DJPjJnUSZSUmUBE
+
+###
+
+
+// GET POSTS BY CATEGORY --> FAIL
+GET http://localhost:3200/posts/categories/Fun
+
+###
+
+// GET ALL CATEGORIES --> FAIL
+GET http://localhost:3200/categories
+
+###
+
+// DELETE POST BY ID 
+DELETE  http://localhost:3200/posts/delete/5eeca8f3c03e7e223a466a7e
+authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjOGMwOWI1NDc5NjE1ZDJlODFhOGUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTI1NjkxNzAsImV4cCI6MTU5MjU2OTQ3MH0.bv3WrMhNJ3xHA5h1uW0CSYNuj7YeMlp-eAkkvH4KpPg
+
+###
+// UPDATE POST 
+PUT  http://localhost:3200/posts/update/5eeca91ac03e7e223a466a80
+Content-Type: application/json
+
+{
+    "title":"Geupdatet"
+}
+
+###
+
+
+// ADD COMMENT TO POST
+POST http://localhost:3200/posts/5eecc43976145733ec629623/add/comments HTTP/1.1
+Content-Type: application/json
+authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjOGMwOWI1NDc5NjE1ZDJlODFhOGUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTI1NzUwNjksImV4cCI6MTU5MjU3NTM2OX0.tU6af4gLDy3FQOawg0EzUdbXJu4xpTVel-EApOiGRoo
+
+{
+
+    "text":"zweiter comment?"
+  
+}
+###

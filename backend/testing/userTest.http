@@ -1,0 +1,84 @@
+//*********************REGISTER*************************************
+
+POST http://localhost:3200/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "LinaLovesBugs",
+    "firstname": "Lina",
+    "lastname":"Schmidt",
+    "email":"schmidti123@web.de",
+    "password":"leertaste123"
+}
+
+###
+
+POST http://localhost:3200/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "IsAdmin",
+    "firstname": "Anna",
+    "lastname":"Reißmann",
+    "email":"annarei@gmail.com",
+    "password":"öööööööööööö/"
+}
+
+###
+
+POST http://localhost:3200/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "hohohohohoh",
+    "firstname": "Linda",
+    "lastname":"Blume",
+    "email":"blume@gmail.com",
+    "password":"blume1234/"
+}
+
+###
+
+
+//*****************LOGIN****************************
+
+POST http://localhost:3200/user/login HTTP/1.1
+Content-Type: application/json
+
+{  
+    "email":"schmidti123@web.de",
+    "password":"leertaste123"
+
+}
+
+
+###
+
+
+//***********************USERSERVICE/ADMIN***************
+
+//GET ALL USERS
+GET http://localhost:3200/user/
+authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWViYTA2ZGU1MTE5ZDFkNjhlYTMxNGEiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTI1MDU1NDYsImV4cCI6MTU5MjUwNTg0Nn0.IHLYbcJK-gcxNM1aVjpiNykq3-HxSIYBVJHWxy68fnM
+
+
+###
+
+//GET USER BY ID
+GET http://localhost:3200/user/5ee869a3795c2114b4f107c9
+
+###
+
+//DELETE USER
+DELETE http://localhost:3200/user/delete/5ee8c084f641a03f2ec2a569
+
+###
+
+//UPDATE USER
+PUT  http://localhost:3200/user/update/5ee891fd9c4f7c2a8c621b5a
+Content-Type: application/json
+
+{
+    "username":"LinaLovesBugs",
+    "lastname":"Schmidt"
+}
