@@ -4,6 +4,7 @@ const User = require('../models/User/User'),
     Joi = require('@hapi/joi');
 
 
+
 /**NOCH ZU IMPLREMTIEREN
  * --User muss pw ändern können und user muss dann upgedated werden
  */
@@ -20,7 +21,7 @@ const schemaRegist = Joi.object().keys({
 });
 
 
-/*******************REGIUSTRIERUNG******************************************* */
+/*******************REGISTER******************************************* */
 
 exports.user_register = async (req, res) => {
     const firstUser = await User.find();
@@ -119,7 +120,10 @@ exports.user_login = async (req, res) => {
         algorithm: 'HS256',
         expiresIn: jwtExpirySeconds
     });
-    res.header('Authtoken', token).send('Login erfolgreich\n\r' + token); //204   
+    res.header('Authtoken', token).send({
+        userID: userExist._id,
+        user:userExist.username
+    });
 };
 
 /********************GET/DELETE USER AS ADMIN*********************************************************************** */

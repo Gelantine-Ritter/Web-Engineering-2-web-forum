@@ -13,6 +13,9 @@ const CommentSchema = mongoose.Schema({ //50
         type: Date,
         default: Date.now
     },
+    post_id:{
+        type: String
+    }
  
 });
 

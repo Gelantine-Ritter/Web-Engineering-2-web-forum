@@ -2,12 +2,12 @@
 // CREATE POST
 POST http://localhost:3200/posts/new HTTP/1.1
 Content-Type: application/json
-authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjYzhlMzNmMTFkMjM1ZWI4NmQ5MDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTkyNTc2MjQxLCJleHAiOjE1OTI1NzY1NDF9.rz3fmUYi9RL4lFaTSLsBdLaLQp5QNKSCTx6IO2wXaGM
+authtoken:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjYzhlMzNmMTFkMjM1ZWI4NmQ5MDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTk1MDYxMjM0LCJleHAiOjE1OTUwNjE1MzR9.xWlYLVv9UsMFDN6AWthxvHKh9_KhRtjvGRVIBFS2kUY
 
 {
-    "title": "Erster Post",
-    "text":"textetxttext!?",
-    "subject": "Fun"
+    "title": "Zweiter Post",
+    "category": "spaß",
+    "text":"Hier gibt es schon ein paar Comments Juhu!?"
 }
 
 ###
@@ -25,8 +25,8 @@ GET http://localhost:3200/posts/categories
 
 ###
 
-// GET ALL COMMENT --> FAIL
-GET http://localhost:3200/posts/comments
+// alle comments zu 1 post
+GET http://localhost:3200/posts/5f11ca69c3d54e76f5ba98e9/comments
 
 
 
@@ -56,7 +56,7 @@ GET http://localhost:3200/categories
 ###
 
 // DELETE POST BY ID 
-DELETE  http://localhost:3200/posts/delete/5eeca8f3c03e7e223a466a7e
+DELETE  http://localhost:3200/posts/delete/5eecc43976145733ec629623
 authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjOGMwOWI1NDc5NjE1ZDJlODFhOGUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTI1NjkxNzAsImV4cCI6MTU5MjU2OTQ3MH0.bv3WrMhNJ3xHA5h1uW0CSYNuj7YeMlp-eAkkvH4KpPg
 
 ###
@@ -72,13 +72,22 @@ Content-Type: application/json
 
 
 // ADD COMMENT TO POST
-POST http://localhost:3200/posts/5eecc43976145733ec629623/add/comments HTTP/1.1
+POST http://localhost:3200/posts/5f12b41bacad821132e4d544/add/comments 
 Content-Type: application/json
-authtoken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjOGMwOWI1NDc5NjE1ZDJlODFhOGUiLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE1OTI1NzUwNjksImV4cCI6MTU5MjU3NTM2OX0.tU6af4gLDy3FQOawg0EzUdbXJu4xpTVel-EApOiGRoo
+authtoken:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjYzhlMzNmMTFkMjM1ZWI4NmQ5MDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTk1MDYxMDcxLCJleHAiOjE1OTUwNjEzNzF9.sNbUj08ZGq9cNGPngBTV9G0wTg130YQB15qbkCEOg_E
 
 {
 
-    "text":"zweiter comment?"
+    "text":"Dritter comment?"
   
 }
 ###
+
+POST http://localhost:3200/posts/postedBy/5f12b41bacad821132e4d544/ 
+Content-Type: application/json
+authtoken:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWVjYzhlMzNmMTFkMjM1ZWI4NmQ5MDYiLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNTk1MDg1OTU5LCJleHAiOjE1OTUwODYyNTl9.TLCLCWFo4wP35yXkewiaxoiiAPKECkud-kLLYTXdGEM
+
+###
+
+
+

@@ -18,6 +18,10 @@ var app = express();
 
 
 
+const cors = require('cors');
+
+//set up cors config
+app.use(cors());
 
 
 /*

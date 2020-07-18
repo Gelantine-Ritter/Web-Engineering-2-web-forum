@@ -6,7 +6,20 @@
 
 var app = require('../app');
 var debug = require('debug')('backend:server');
-var http = require('http');
+var https = require('https');
+
+
+var express = require('express')
+//set up cors config
+
+
+
+const fs = require('fs');
+
+const key = fs.readFileSync(__dirname+'/certificates/key.pem');
+const cert = fs.readFileSync(__dirname+'/certificates/cert.pem');
+
+const server = https.createServer({key:key,cert:cert, passphrase:'test'},app);
 
 
 /**
@@ -17,12 +30,11 @@ var port = normalizePort(process.env.PORT || '3200');
 app.set('port', port);
 
 
-
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+//var server = http.createServer(app);
 
 
 const initDb = require("../my_modules/connectDB").init_db;

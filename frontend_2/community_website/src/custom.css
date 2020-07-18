@@ -1,0 +1,285 @@
+
+
+body {
+  font-family: 'Jost', sans-serif;
+  overflow-x: hidden;
+  color: #505962;
+}
+
+p {
+  font-size: 1.4rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+
+/*Navigation*/
+.navbar {
+  letter-spacing: .1rem;
+    /*!important überschreibt background color der navigation*/
+  background: rgba(0, 0, 0, .6)!important;
+}
+
+.navbar-brand img {
+  height: 2.7rem;
+}
+
+/*Login PopUp*/
+.modal-title {
+  font-family: 'Press Start 2P';
+  color: indianred;
+  margin: -2rem 0rem 2rem;
+}
+
+#popUpBtn {
+  margin-top: 1.3rem;
+}
+
+.text-info {
+  color: indianred!important;
+}
+
+/*bold headline*/
+.bold_head h1 {
+  margin: 20px;
+  font-family: 'Press Start 2P';
+  color: indianred;
+}
+
+.bold_head h2 {
+  margin-top: 100px;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/*Carousel*/
+.carousel-caption h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: .3rem;
+  padding-bottom: 3rem;
+}
+
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: .1rem;
+  padding-bottom: 3rem;
+}
+
+/*slide text*/
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  right: 0;
+  left: 0;
+}
+
+/*About und Faq*/
+.offset:before {
+  height: 10rem;
+  margin-top: -5rem;
+  content: "";
+  display: block;
+}
+
+.heading-underline {
+  width: 3rem;
+  height: .2rem;
+  background-color: indianred;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.narrow h1 {
+  font-size: 3rem;
+}
+
+.narrow h2 {
+  padding: 3rem;
+  font-size: 2rem;
+}
+
+p a {
+  color: indianred;
+}
+
+p a:hover {
+  text-decoration: none;
+  color: #505962;
+}
+
+
+/*footer*/
+
+footer {
+  background-color: #505962;
+  color: white;
+  padding: 2rem 0 3rem;
+}
+
+footer img {
+  height: 4rem;
+  margin: 1.5rem 0;
+}
+
+.socialmedia {
+  font-size: 1.3rem;
+}
+
+hr.socket {
+  border-top: .2rem solid #9da2a7;
+  width: 100%;
+}
+
+
+/***********************************************/
+
+
+/*Media Queries*/
+
+@media (max-width: 992px) {
+    /*allgemein*/
+  p {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+    /*bold headline*/
+  .bold_head h1 {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+  }
+    /*Carousel*/
+  .carousel-caption h1 {
+    margin-top: -10%;
+    font-size: 3rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.8rem;
+    padding-bottom: 1.2rem;
+  }
+   
+    /*about und faq*/
+  .narrow h1 {
+    font-size: 2rem;
+  }
+
+  .narrow h2 {
+    font-size: 1.6rem;
+  }
+
+  .narrow p {
+    font-size: 1rem;
+  }
+
+  div p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+    /*allgemein*/
+  #nav-sm {
+    padding-right: 5rem;
+  }
+    /*bold headline*/
+  .bold_head h1 {
+    margin: 20px;
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .bold_head h2 {
+    margin-top: 90px;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+    /*Login PopUp*/
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+  }
+
+  .modal-footer {
+    font-size: 0.75rem;
+  }
+    /*Carousel*/
+  .carousel-caption h1 {
+    font-size: 2rem;
+    letter-spacing: .15rem;
+    padding-bottom: .5rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+    /*allgemein*/
+  p {
+    text-align: left;
+  }
+    /*bold headline*/
+  .bold_head h1 {
+    font-size: 2rem;
+    margin-bottom: 1.7rem;
+  }
+
+  .bold_head h2 {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+  }
+    /*Carousel*/
+  .carousel-caption h1 {
+    margin-top: -6rem;
+    font-size: 1.3rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: .9rem;
+    margin-bottom: -1.5%;
+  }
+
+    /*about und faq*/
+  .offset:before {
+    height: 7rem;
+  }
+
+  #signUpAbout {
+    border-width: thin;
+    font-size: 1rem;
+  }
+
+  .heading-underline {
+    width: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .narrow h1 {
+    font-size: 1.5rem;
+  }
+
+  .narrow h2 {
+    font-size: 1.2rem;
+    margin-bottom: -2rem;
+    margin-top: -2.7rem;
+  }
+
+  .narrow p {
+    font-size: 0.9rem;
+  }
+    /*footer*/
+  #divKontakt p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

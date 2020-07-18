@@ -15,6 +15,9 @@ const {
     query
 } = require('express');
 
+
+
+
 /** Noch zu implementieren:
  * --seerchbar für category und für posts --> kommt mit react??
  * --bei category an legen, checken ob diese schon angelegt ist wenn ja keine neue erstellen
@@ -63,20 +66,25 @@ exports.posts_get_all = async (req, res) => {
 // --> FAIL OBJECT ID
 exports.post_show_all_comments = async (req, res) => {
     try {
-        const result = await Comment.find()
+        const myPost = await Post.findById(req.params.id)
+
+        const result = await Comment.find({post_id: myPost._id})
         if (result == null) {
             console.log(err)
             return res.json({
                 message: 'Cannot find comments'
             })
+        }else{
+            
+            res.json(result);
+
         }
-        res.json(result);
     } catch (err) {
         console.log(err)
     }
 };
 
-
+//alle comments zu einem post
 exports.comment_get_by_id = async (req, res, ) => {
     try {
         const result = await Comment.findById(req.params.id)
@@ -132,10 +140,10 @@ exports.posts_create_new = async (req, res) => {
             subject: req.body.subject
     });
     let postObj = new Post({
-        postedBy: req.userExist._id, // wie username?????
+       // postedBy: req.userExist._id, // wie username?????
         title: req.body.title,
         text: req.body.text,
-        category: categoryObj
+       category: categoryObj
     });
     try {
         categoryObj = await categoryObj.save();
@@ -160,10 +168,15 @@ exports.posts_get_all_categories = async (req, res) => {
 
 
 exports.posts_add_comment = async (req, res) => {
+
+    var postID = (await Post.findById({_id:req.params.id}))
+
     let commentObj = new Comment({
-        postedBy: req.userExist.username, // wie username?????
+        postedBy: req.userExist.username, 
         text: req.body.text,
+        post_id: postID.id
     });
+
     await commentObj.save();
     Post.findOneAndUpdate({
             _id: req.params.id
@@ -213,4 +226,8 @@ exports.posts_update_by_id = async (req, res) => {
 //NOCH IMPLEMENTIEREN
 
 exports.posts_by_user_id = async (req, res) => {
+
 };
+
+
+
